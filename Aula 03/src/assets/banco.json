@@ -1,0 +1,8 @@
+{
+    "lista": [
+        {"id": 1, "produto": "Arroz", "quantidade": "5k"},
+        {"id": 2, "produto": "Macarrão", "quantidade": "2k"},
+        {"id": 3, "produto": "Contra-file", "quantidade": "5k"},
+        {"id": 4, "produto": "Coração", "quantidade": "3k"}
+    ]
+}
