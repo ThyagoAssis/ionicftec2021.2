@@ -7,11 +7,6 @@
       "status": false
     },
     {
-      "produto": "Carne",
-      "quantidade": "6 K",
-      "id": 3
-    },
-    {
       "produto": "Maça",
       "quantidade": "2 K",
       "status": false,
