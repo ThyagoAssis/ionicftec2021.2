@@ -2,14 +2,12 @@
   "lista": [
     {
       "produto": "Macarrão",
-      "quantidade": "2 k",
-      "status": false,
+      "quantidade": "5 k",
       "id": 1
     },
     {
       "produto": "Feijao",
-      "quantidade": "2 k",
-      "status": false,
+      "quantidade": "3 k",
       "id": 2
     }
   ]

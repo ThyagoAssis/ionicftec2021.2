@@ -36,4 +36,9 @@ export class DatabaseService {
   statusItem(item: Produtos){
     return this.http.put(this.API + item.id, JSON.stringify(item), this.HttpOptions).subscribe();
   }
+
+  //Método de atualização
+  updateItem(item: Produtos, id: any){
+    return this.http.put(this.API + id, JSON.stringify(item), this.HttpOptions).subscribe();
+  }
 }

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Produtos } from 'src/app/model/produto.model';
 
 import { DatabaseService } from 'src/app/servico/database.service';
+import { UtilityService } from 'src/app/servico/utility.service';
 
 @Component({
   selector: 'app-form',
@@ -18,7 +19,9 @@ export class FormPage implements OnInit {
   constructor(
     //Essa ferramnete server para captura a rota (caminho) que estiver ativo
     private activatedRoute: ActivatedRoute,
-    private banco: DatabaseService
+    private banco: DatabaseService,
+    private router: Router,
+    private util: UtilityService
   ) { }
 
   ngOnInit() {
@@ -31,8 +34,10 @@ export class FormPage implements OnInit {
   }
 
   //Método que chama o serviço de atualização
-  update(form: Produtos){
-    
+  update(form: any){
+    this.banco.updateItem(form.value, this.routeId);
+    this.router.navigate(['']);
+    this.util.toastando("Item Atualizado com sucesso", "middle", 2000, "medium");
   }
 
 }
