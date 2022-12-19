@@ -26,11 +26,11 @@
 
       <ion-item-options>
         
-        <ion-item-option  style="border-radius: 20%;" color="danger" (click)="deletar(produto.id)">
+        <ion-item-option  color="danger" (click)="deletar(produto.id)">
           <ion-icon name="trash-outline"></ion-icon>          
         </ion-item-option>
         
-        <ion-item-option style="border-radius: 20%;" color="success" [routerLink]="['/form',produto.id]">
+        <ion-item-option  color="success" [routerLink]="['/form',produto.id]">
           <ion-icon name="refresh-outline"></ion-icon>
         </ion-item-option>
 
