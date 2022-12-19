@@ -3,12 +3,19 @@
     {
       "produto": "Macarrão",
       "quantidade": "5 k",
-      "id": 1
+      "id": 1,
+      "status": false
     },
     {
-      "produto": "Feijao",
-      "quantidade": "3 k",
-      "id": 2
+      "produto": "Carne",
+      "quantidade": "6 K",
+      "id": 3
+    },
+    {
+      "produto": "Uva passas",
+      "quantidade": "2 k",
+      "status": false,
+      "id": 4
     }
   ]
 }

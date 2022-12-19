@@ -24,10 +24,12 @@ export class DatabaseService {
     return this.http.get<Produtos>(this.API + id);
   }
 
+  //Método para caastrar um novo item
   postItem(dados: any){
     return this.http.post(this.API, JSON.stringify(dados), this.HttpOptions).subscribe()
   }
 
+  //Método para apagar um item
   delItem(id: number){
     return this.http.delete(this.API + id).subscribe();
   }

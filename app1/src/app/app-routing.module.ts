@@ -3,25 +3,16 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
 
-  //Rotas filhas
-  {
-    path: 'home',
-    loadChildren: () => import('./page/home/home.module').then( m => m.HomePageModule)
-  },
-
-  {
-    path: 'contato', 
-    loadChildren: () => import('./page/contato/contato.module').then(m => m.ContatoPageModule)
-  },
+  //Rotas filhas 
   
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'footer',
     pathMatch: 'full'
   },
   {
-    path: 'sobre',
-    loadChildren: () => import('./page/sobre/sobre.module').then( m => m.SobrePageModule)
+    path: 'footer',
+    loadChildren: () => import('./componentes/footer/footer.module').then(m => m.FooterModule )
   },
   {
     path: 'form/:id',
