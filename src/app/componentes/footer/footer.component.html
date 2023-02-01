@@ -1,0 +1,32 @@
+<ion-tabs  >
+
+    <ion-fab  vertical="bottom" horizontal="center"  translucent="true" mode="ios">
+        <ion-fab-button color="dark" routerLink="/footer">
+          <ion-icon name="home-outline"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+      
+  <ion-tab-bar slot="bottom" color="dark" mode="ios">    
+
+      <ion-tab-button class="comments" (click)="alertando()">
+          <ion-icon name="add-circle-outline"></ion-icon>
+          <ion-label>Cadastrar</ion-label>
+      </ion-tab-button>
+
+      
+      <!-- <ion-tab-button tab="home" color="medium">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Início</ion-label>
+     </ion-tab-button> -->
+     
+     <div class="division"></div>    
+    
+      
+      <ion-tab-button tab="contato" class="notifs">
+          <ion-icon name="phone-portrait-outline"></ion-icon>
+          <ion-label>Contato</ion-label>
+      </ion-tab-button> 
+     
+
+  </ion-tab-bar>
+</ion-tabs>
