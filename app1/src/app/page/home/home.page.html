@@ -2,11 +2,18 @@
   <ion-toolbar color="dark" mode="ios">
     <ion-title>
       Shopping List
-    </ion-title>
+    </ion-title>    
+  </ion-toolbar >
+  <ion-toolbar color="dark">
+    <ion-searchbar [debounce]="1000" (ionChange)="captura($event)" mode='ios' placeholder="Pesquisar" color="dark"></ion-searchbar>
   </ion-toolbar>
+  
 </ion-header>
 
 <ion-content [fullscreen]="true">
+
+ 
+  
   <ion-img [src]="image"></ion-img>  
   
     <ion-list >      
@@ -31,7 +38,7 @@
         </ion-item-option>
         
         <ion-item-option  color="success" [routerLink]="['/form',produto.id]">
-          <ion-icon name="refresh-outline"></ion-icon>
+          <ion-icon name="pencil-outline"></ion-icon>
         </ion-item-option>
 
       </ion-item-options>

@@ -7,7 +7,7 @@ const routes: Routes = [
   
   {
     path: '',
-    redirectTo: 'footer',
+    redirectTo: 'logar',
     pathMatch: 'full'
   },
   {
@@ -18,6 +18,11 @@ const routes: Routes = [
     path: 'form/:id',
     loadChildren: () => import('./page/form/form.module').then( m => m.FormPageModule)
   },
+  {
+    path: 'logar',
+    loadChildren: () => import('./login/logar/logar.module').then( m => m.LogarPageModule)
+  },
+
 
   //Rotas simples
   /* {path 'inicio', component: iniciocomponete} */

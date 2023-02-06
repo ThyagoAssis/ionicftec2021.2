@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { DatabaseService } from 'src/app/servico/database.service';
+import { FirebaseService } from 'src/app/servico/firebase.service';
 import { UtilityService } from 'src/app/servico/utility.service';
 
 @Component({
@@ -11,8 +12,12 @@ import { UtilityService } from 'src/app/servico/utility.service';
 export class FooterComponent implements OnInit {
 
   constructor(
-     //Nosso serviço de banco de dados
-     private DataBase: DatabaseService,
+     //Nosso serviço de banco de dados (json-server)
+     //private DataBase: DatabaseService,
+
+     //Serviço de banco de dados Firebase
+     private firebase: FirebaseService,
+
      //alertController - Ferramente que cria um alert
      private alertCtrl: AlertController,
       //Serviço de utilidades 
@@ -62,8 +67,11 @@ export class FooterComponent implements OnInit {
               //Vai ser a variavel de controle do ngIf
               status: false     
             };
+
+            //Cadastra no banco de dados
             try{
-              this.DataBase.postItem(item);
+              //this.DataBase.postItem(item);
+              this.firebase.cadastro(item);
             }catch(err){
               console.log(err)
             }finally{

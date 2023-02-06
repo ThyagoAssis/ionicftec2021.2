@@ -33,9 +33,8 @@ export class UtilityService {
         duration,
         color
       });
-      (await toastei).present();
-      //location.reload();
-
+      (await toastei).present();      
+      
       setTimeout(this.refresh, 2000);
     }
 

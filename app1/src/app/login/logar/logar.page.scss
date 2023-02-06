@@ -1,0 +1,44 @@
+ion-header{
+    height: 130px;
+    width: 100%;
+    background-color: #2A4072;
+    background: linear-gradient(90deg, #2A4072 0%, #a09171 100%);
+    box-shadow: 0px 1px 10px #413333;
+    transform: rotate(-4deg);
+    border-radius: 10px 10px 10px 50px;
+    margin-left: 0;
+    margin-top: -50px;
+    margin-bottom: 100px;
+}
+
+ion-input{
+    border: 2px solid #2A4072;
+    border-radius: 10px;
+    height: 52px;
+}
+
+ion-label{
+    color: #2A4072;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+ion-button{
+    font-weight: 900;
+    font-size: 11px;
+    font-style: normal;
+}
+
+.button_register{
+    width: 113px;
+    height: 39px;    
+}
+
+.button_logar{
+    height: 52px;
+}
+
+.button_passwd{
+    width: 198px;
+    height: 52px;
+}
