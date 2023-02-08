@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActionSheetController, IonListHeader } from '@ionic/angular';
+import { ActionSheetController } from '@ionic/angular';
 
 import { Produtos } from 'src/app/model/produto.model';
+import { AuthService } from 'src/app/servico/auth.service';
 import { FirebaseService } from 'src/app/servico/firebase.service';
 import { UtilityService } from 'src/app/servico/utility.service';
 
@@ -18,6 +19,8 @@ export class HomePage implements OnInit {
   listaProdutos: Produtos[]  = [];
   //resultado = [ ...this.listaProdutos];
 
+  user: any
+
   constructor(
     //Nosso serviço de banco de dados(json-server)
     //private DataBase: DatabaseService, 
@@ -27,8 +30,11 @@ export class HomePage implements OnInit {
 
     //ActionSheet
     private actionSheet: ActionSheetController,
+
     //Serviço de utilidades 
-    private utilidades: UtilityService   
+    private utilidades: UtilityService,
+    
+    private authServicce: AuthService
   ) {}
 
   ngOnInit(){
@@ -39,7 +45,14 @@ export class HomePage implements OnInit {
       this.listaProdutos = results;
       
       //this.resultado = [ ...this.listaProdutos];
-    });    
+    });
+    
+    this.authServicce.getAuth().user.subscribe(results => {
+      this.utilidades.toastando('Ola! ' + results.email, 'top', 2000, "dark" )
+    });
+
+    
+    
   }   
 
   captura(event){    
