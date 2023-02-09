@@ -12,8 +12,13 @@ export class FirebaseService {
   //Ferramenta para manipular as coleções
   itemCollection: AngularFirestoreCollection
 
+  user:any = {
+    id: localStorage.getItem('userId'),
+    name: localStorage.getItem('name')
+  }; 
+
   constructor(private af: AngularFirestore) { 
-    this.itemCollection = af.collection('itens');
+    this.itemCollection = af.collection('user/' + this.user.id + '/' + this.user.name);    
   }
   //Busca todos os produtos
   consulta():any{
@@ -33,16 +38,16 @@ export class FirebaseService {
     return this.itemCollection.doc(id).valueChanges();
   }
 
-  cadastro(item: any){
-    return this.itemCollection.add(item)
+  cadastro(dados: any){
+    return this.itemCollection.add(dados)
   }
 
   deletar(id: string){
     return this.itemCollection.doc(id).delete()
   }
 
-  editar(id: string, item: any){
-    return this.itemCollection.doc(id).update(item)
+  editar(id: string, dados: any){
+    return this.itemCollection.doc(id).update(dados)
   }
 
 

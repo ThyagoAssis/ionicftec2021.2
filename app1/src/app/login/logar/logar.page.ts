@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { AuthService } from 'src/app/servico/auth.service';
+import { resourceLimits } from 'worker_threads';
 import { UtilityService } from '../../servico/utility.service';
 
 @Component({
@@ -16,9 +17,9 @@ export class LogarPage implements OnInit {
   registerButton = "Registrar";
 
   //Tipar os dados do formulario
-  form: FormGroup
-
-  constructor(
+  form: FormGroup;
+  
+ constructor(
     //Serviço de autenticação criado por nois
     private authencation: AuthService,
 
@@ -33,8 +34,11 @@ export class LogarPage implements OnInit {
 
     //Executa o método na inicialização da pagina logar
     this.validaForm();
+    this.authencation.getAuth().user.subscribe(results => {
+      localStorage.setItem('userId', results.uid );
+    });
+    
   }
-
 
   //Método de criação e validação do formulario
   validaForm(){
@@ -58,16 +62,25 @@ export class LogarPage implements OnInit {
 
   //Metodo chamado pelo botão submit do formulario
   formulario(){
-    if(this.nameButton == 'Logar'){      
+    if(this.nameButton == 'Logar'){    
+
         this.authencation.loginUser(this.form.value);
+        console.log(localStorage.getItem('name'))
+        console.log(localStorage.getItem('userId'))
 
     }else if(this.nameButton == 'Registrar'){
-
+      
       this.authencation.createUser(this.form.value);
+      localStorage.setItem('name', this.form.value.nome);    
 
     }else{
       console.log('Operação Desconhecida!');
-    }    
+    }
+    
+    
+
+
+        
   }
 
 

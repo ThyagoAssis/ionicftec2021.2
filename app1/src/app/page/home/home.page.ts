@@ -45,13 +45,9 @@ export class HomePage implements OnInit {
       this.listaProdutos = results;
       
       //this.resultado = [ ...this.listaProdutos];
-    });
+    });   
     
-    this.authServicce.getAuth().user.subscribe(results => {
-      this.utilidades.toastando('Ola! ' + results.email, 'top', 2000, "dark" )
-    });
-
-    
+    this.utilidades.toastando('Ola! ' + localStorage.getItem('name'), 'top', 2000, "dark" )
     
   }   
 
